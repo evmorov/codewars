@@ -22,6 +22,8 @@ Execute `codewars help` to see all available commands.
 
 ## Development
 
+### TO-DO
+
 - [ ] Refactor anything you can
 - [ ] Add travis, coveralls, etc
 - [ ] Change the name of commands: attempt and finalize (join them to one command?)
@@ -30,6 +32,7 @@ Execute `codewars help` to see all available commands.
 - [ ] Make 100% coverage in simplecov
 - [ ] Write RSpec module tests
 - [ ] Divide description.md to task.md + info.yml?
+- [ ] Refactor features so stubbing (mocking) become more obvious
 
 ## Contributing
 
