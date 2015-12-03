@@ -1,5 +1,5 @@
 module Codewars
-  class TrainNext < Thor::Shell::Basic
+  class TrainNext < Thor
     def initialize
       message = []
       api_key = Configuration.option('api_key')
