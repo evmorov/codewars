@@ -1,0 +1,34 @@
+## Description of the kata
+
+Name: <%= kata.name %>
+
+URL: <%= codewars_url %>/kata/<%= kata.slug %>
+
+Author: <%= kata.author %>
+
+Rank: <%= kata.rank %>
+
+Slug: <%= kata.slug %>
+
+Project ID: <%= kata.project_id %>
+
+Solution ID: <%= kata.solution_id %>
+
+Tags: <%= kata.tags.join(', ') %>
+
+### Task
+
+<%= kata.description %>
+
+### Code
+
+```<%= language %>
+<%= kata.code_setup %>
+```
+<% unless kata.tests_setup.to_s.empty? %>
+### Test
+
+```<%= language %>
+<%= kata.tests_setup %>
+```
+<% end %>

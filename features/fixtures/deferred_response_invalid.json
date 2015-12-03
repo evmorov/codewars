@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "dmid": "U8s6z0aK",
+  "solution_id": "562cbb379116fb896c00002c",
+  "valid": false,
+  "server_error": 301,
+  "passed": false,
+  "errors": true,
+  "failed": false,
+  "timed_out": true,
+  "summary": {
+    "passed": 0,
+    "failed": 0,
+    "errors": 1
+  },
+  "reason": "-e: Value is not what was expected (Test::Error)",
+  "output": ["<div class='console-failed'>Value is not what was expected</div>"],
+  "wall_time": 2273,
+  "status_code": 200
+}

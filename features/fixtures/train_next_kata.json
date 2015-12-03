@@ -1,0 +1,23 @@
+{
+  "success": true,
+  "name": "Anything to integer",
+  "slug": "anything-to-integer",
+  "href": "/kata/anything-to-integer",
+  "description": "Your task is to program a function which converts",
+  "author": "Jake Hoffner",
+  "rank": -6,
+  "averageCompletion": 125.4,
+  "tags": [
+    "Fundamentals",
+    "Integers",
+    "Data Types",
+    "Numbers"
+  ],
+  "session": {
+    "projectId": "523f66fba0de5d94410001cb",
+    "solutionId": "53bc968d35fd2feefd000013",
+    "setup": "function toInteger(n) {}",
+    "exampleFixture": "Test.expect(toInteger(\"4.55\") === 4)",
+    "code": null
+  }
+}
