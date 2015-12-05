@@ -8,7 +8,7 @@ Execute `gem install codewars`
 
 Execute `codewars help` to see all available commands.
 
-1. Set an api-key from the codewars website `codewars config key your-secret-key`
+1. Set an API ACCESS TOKEN from the codewars website (https://www.codewars.com/users/edit) `codewars config key your-secret-key`
 2. Set a language you want to use `codewars config language ruby|javascript|etc`
 3. Choose a kata which you want to solve `codewars train`
 4. Start solving the kata `codewars train name-of-kata`
