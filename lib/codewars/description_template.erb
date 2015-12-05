@@ -1,4 +1,4 @@
-## Description of the kata
+# Description of the kata
 
 Name: <%= kata.name %>
 
@@ -16,17 +16,17 @@ Solution ID: <%= kata.solution_id %>
 
 Tags: <%= kata.tags.join(', ') %>
 
-### Task
+## Task
 
 <%= kata.description %>
 
-### Code
+## Code
 
 ```<%= language %>
 <%= kata.code_setup %>
 ```
 <% unless kata.tests_setup.to_s.empty? %>
-### Test
+## Test
 
 ```<%= language %>
 <%= kata.tests_setup %>

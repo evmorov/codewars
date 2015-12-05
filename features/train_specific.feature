@@ -32,7 +32,7 @@ Feature: Command 'train' with an argument
     When I run `codewars train anything-to-integer`
     Then a file named "anything-to-integer/java/description.md" should contain exactly:
       """
-      ## Description of the kata
+      # Description of the kata
 
       Name: Anything to integer
 
@@ -50,17 +50,17 @@ Feature: Command 'train' with an argument
 
       Tags: Fundamentals, Integers, Data Types, Numbers
 
-      ### Task
+      ## Task
 
       Your task is to program a function which converts
 
-      ### Code
+      ## Code
 
       ```java
       public String test(String str) {}
       ```
 
-      ### Test
+      ## Test
 
       ```java
       Test.expect(toInteger("4.55") === 4)
