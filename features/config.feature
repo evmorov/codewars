@@ -98,3 +98,16 @@ Feature: You can use a config file to store configurations
       language: ruby
       api_key: my_secret_key
       """
+
+  Scenario: Set several languages to the config file
+    Given the config file with:
+      """
+      api_key: my_secret_key
+      """
+    When I run `codewars config language ruby,coffeescript`
+    Then the output should contain exactly "You've successefully added the default language to the configuration file"
+    And the config file should contain exactly:
+      """
+      api_key: my_secret_key
+      language: ruby,coffeescript
+      """

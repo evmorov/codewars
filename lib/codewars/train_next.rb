@@ -10,7 +10,7 @@ module Codewars
 
       client = CodewarsApi::Client.new(api_key: api_key)
       kata = client.train_next_kata(
-        language: language,
+        language: language.split(',').first,
         peek: 'true',
         strategy: 'default'
       )

@@ -75,6 +75,15 @@ Before('@stub_train_specific_kata') do
     .to_return(json_response 'train_specific_kata.json')
 end
 
+Before('@stub_train_specific_kata_ruby') do
+  language = 'ruby'
+  id_or_slug = 'anything-to-integer'
+  api_key = 'iT2dAoTLsv8tQe7KVLxe'
+  stub_post("/code-challenges/#{id_or_slug}/#{language}/train")
+    .with(headers: { Authorization: api_key })
+    .to_return(json_response 'train_specific_kata.json')
+end
+
 def stub_get(url)
   stub_request(:get, "#{CODEWARS_BASE}#{CODEWARS_API}#{url}")
 end
