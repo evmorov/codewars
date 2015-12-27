@@ -5,8 +5,8 @@ module Codewars
       fail Thor::Error, 'You should set an api-key to use this command' unless api_key
 
       desc = Description.new
-      project_id = desc.take_value_from_file(/Project ID: (\w+)/, 'Project ID')
-      solution_id = desc.take_value_from_file(/Solution ID: (\w+)/, 'Solution ID')
+      project_id = desc.take_value_from_file(/Project ID: (.+)/, 'Project ID')
+      solution_id = desc.take_value_from_file(/Solution ID: (.+)/, 'Solution ID')
       solution = read_solution_file
 
       client = CodewarsApi::Client.new(api_key: api_key)

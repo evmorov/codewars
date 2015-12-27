@@ -26,3 +26,19 @@ Background:
       Your solution has been finalized.
       Other solutions can be found here: http://www.codewars.com/kata/anything-to-integer/solutions/
       """
+
+  @stub_finalize_solution
+  Scenario: Digits in kata's name
+    Given a file "1-anything-to-integer-2/java/solution.java" with "solved_kata"
+    And a file "1-anything-to-integer-2/java/description.md" with:
+      """
+      Slug: 1-anything-to-integer-2
+      Project ID: 562cbb369116fb896c00002a
+      Solution ID: 562cbb379116fb896c00002c
+      """
+    When I cd to "1-anything-to-integer-2/java/"
+    And I run `codewars finalize`
+    Then the output should contain:
+      """
+      http://www.codewars.com/kata/1-anything-to-integer-2/solutions/
+      """
