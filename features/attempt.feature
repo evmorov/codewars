@@ -46,6 +46,23 @@ Feature: Command 'attempt'
       -e: Value is not what was expected (Test::Error)
       """
 
+  @stub_attempt_solution @stub_deferred_response_invalid
+  Scenario: Filenames are case insesitive
+    Given a file "anything-to-integer/java/SolutioN.Java" with "solved_kata"
+    And a file "anything-to-integer/java/DescriptioN.MD" with:
+      """
+      ## Description of the kata
+      Project ID: 562cbb369116fb896c00002a
+      Solution ID: 562cbb379116fb896c00002c
+      Other information
+      """
+    When I cd to "anything-to-integer/java/"
+    And I run `codewars attempt`
+    Then the output should contain:
+      """
+      Your solution has been uploaded
+      """
+
   Scenario: No description.md file when trying to attempt a solution
     Given a file "anything-to-integer/java/solution.java" with "solved_kata"
     When I cd to "anything-to-integer/java/"
@@ -85,7 +102,7 @@ Feature: Command 'attempt'
       'Project ID' has not been found in the 'description.md' file.
       """
 
-  Scenario: Solution ID has not found when trying to attempt a solution
+  Scenario: Solution ID hasn't been found when trying to attempt a solution
     Given a file "anything-to-integer/java/description.md" with:
       """
       ## Description of the kata
