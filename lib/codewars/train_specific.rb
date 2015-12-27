@@ -1,4 +1,5 @@
 require 'erb'
+require 'fileutils'
 
 module Codewars
   class TrainSpecific < Thor
@@ -33,8 +34,7 @@ module Codewars
 
     def write_kata(slug, language, file_name, content)
       dir_to_write = File.expand_path(slug)
-      Dir.mkdir dir_to_write unless File.directory?(dir_to_write)
-      Dir.mkdir "#{dir_to_write}/#{language}" unless File.directory?("#{dir_to_write}/#{language}")
+      FileUtils.mkdir_p "#{dir_to_write}/#{language}"
       file_path = File.expand_path("#{dir_to_write}/#{language}/#{file_name}")
       relative_path = "./#{slug}/#{language}/#{file_name}"
       fail Thor::Error, "'#{relative_path}' already exists." if File.exist? file_path
