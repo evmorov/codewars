@@ -24,22 +24,6 @@ Execute `codewars help` to see all available commands.
 
 Not sure for purpose or not but API sometimes caches a request for the next kata. To solve the problem go to the link http://www.codewars.com/dashboard in your browser.
 
-## Development
-
-### TO-DO
-
-- [ ] Refactor anything you can
-- [ ] Add travis, coveralls, etc
-- [ ] After `codewars finalize` show a link with the language of submission
-- [ ] Change the name of commands: attempt and finalize (join them to one command?)
-- [ ] Rename 'config' command? Maybe to 'set'?
-- [ ] Add options to commands that can be added: --strategy=something, --language=something, etc.
-- [ ] Make 100% coverage in simplecov
-- [ ] Write RSpec module tests
-- [ ] Divide description.md to task.md + info.yml?
-- [ ] Refactor features so stubbing (mocking) become more obvious
-- [ ] Make a bug report "Author's name in an API response is yours name"
-
 ## Contributing
 
 Bug reports, pull requests and ideas are welcome!
