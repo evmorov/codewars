@@ -8,17 +8,16 @@ Execute `gem install codewars`
 
 Execute `codewars help` to see all available commands.
 
-1. Set an API ACCESS TOKEN from the codewars website (https://www.codewars.com/users/edit) `codewars config key your-secret-key`
-2. Set a language you want to use `codewars config language ruby|javascript|etc`
-3. Choose a kata which you want to solve `codewars train`
-4. Start solving the kata `codewars train name-of-kata`
-5. Go to created folder `cd name-of-kata/language/`
-6. Look at description.md (use a Markdown viewer)
-7. According to the description of the kata change or create tests using your favorite test framework
-8. Change the solution.* file so the tests become green
-9. Upload the solution and wait for a response of tests on the server `codewars attempt`
-10. If there are no mistakes finalize the previously attempted solution `codewars finalize`
-11. Look at results of other people, rest and pick up another kata or the same kata but using another language
+1. Set TOKEN from https://www.codewars.com/users/edit `codewars config key your-secret-key`
+2. Set a language `codewars config language ruby|javascript|etc`
+3. Choose a kata `codewars train`
+4. Start solving `codewars train name-of-kata`
+5. Open a folder `cd name-of-kata/language/`
+6. Create tests according on description.md
+7. Make the tests green
+8. Attempt the solution on the server `codewars attempt`
+9. Refactor your code
+10. Finalize `codewars finalize`
 
 ### Problems
 
