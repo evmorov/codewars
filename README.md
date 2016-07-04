@@ -2,11 +2,12 @@
 
 ## Installation
 
-Execute `gem install codewars`
+1. Make sure that Ruby is installed `ruby -v`
+2. Run `gem install codewars`
 
 ## Usage
 
-Execute `codewars help` to see all available commands.
+Run `codewars help` to see all available commands.
 
 1. Set TOKEN from https://www.codewars.com/users/edit `codewars config key your-secret-key`
 2. Set a language `codewars config language ruby|javascript|etc`
