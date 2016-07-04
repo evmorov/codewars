@@ -2,7 +2,7 @@ module Codewars
   class Attempt < Thor
     def initialize
       api_key = Configuration.option('api_key')
-      fail Thor::Error, 'You should set an api-key to use this command' unless api_key
+      raise Thor::Error, 'You should set an api-key to use this command' unless api_key
 
       desc = Description.new
       project_id = desc.take_value_from_file(/Project ID: (.+)/, 'Project ID')
@@ -28,7 +28,7 @@ module Codewars
       file_name = 'solution.*'
       solution_filename = Dir.glob(file_name).first
       unless solution_filename
-        fail Thor::Error, "The file '#{file_name}' has not been found in the current directory."
+        raise Thor::Error, "The file '#{file_name}' has not been found in the current directory."
       end
       File.read File.expand_path(solution_filename)
     end
@@ -45,7 +45,7 @@ module Codewars
 
     def handle_deferred_response(deferred_response)
       if deferred_response.nil? || !deferred_response.success
-        fail Thor::Error, "Can't get a result of tests on the server. Try it again."
+        raise Thor::Error, "Can't get a result of tests on the server. Try it again."
       end
 
       if deferred_response.valid
@@ -53,7 +53,7 @@ module Codewars
         say 'Type to finalize the solution: ' + set_color('codewars finalize', :blue, true)
       else
         error 'The solution has not passed tests on the server. Response:'
-        fail Thor::Error, set_color(deferred_response.reason, :red)
+        raise Thor::Error, set_color(deferred_response.reason, :red)
       end
     end
   end

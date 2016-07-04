@@ -2,7 +2,7 @@ module Codewars
   class Finalize < Thor
     def initialize
       api_key = Configuration.option('api_key')
-      fail Thor::Error, 'You should set an api-key to use this command' unless api_key
+      raise Thor::Error, 'You should set an api-key to use this command' unless api_key
 
       desc = Description.new
       slug = desc.take_value_from_file(/Slug: (.+)/, 'Slug')
@@ -24,7 +24,7 @@ module Codewars
         say 'Your solution has been finalized.'
         say "Other solutions can be found here: #{CODEWARS_URL}/kata/#{slug}/solutions/"
       else
-        fail Thor::Error, 'Something went wrong. Try to sumbit the solution again.'
+        raise Thor::Error, 'Something went wrong. Try to sumbit the solution again.'
       end
     end
   end

@@ -1,7 +1,7 @@
 require 'webmock/cucumber'
 
-CODEWARS_BASE = 'https://www.codewars.com'
-CODEWARS_API = '/api/v1'
+CODEWARS_BASE = 'https://www.codewars.com'.freeze
+CODEWARS_API = '/api/v1'.freeze
 
 Before('@stub_attempt_solution') do
   project_id = '562cbb369116fb896c00002a'
@@ -11,7 +11,7 @@ Before('@stub_attempt_solution') do
     .with(
       body: { code: 'solved_kata' },
       headers: { Authorization: api_key }
-    ).to_return(json_response 'attempt_solution.json')
+    ).to_return(json_response('attempt_solution.json'))
 end
 
 Before('@stub_deferred_response') do
@@ -19,7 +19,7 @@ Before('@stub_deferred_response') do
   api_key = 'iT2dAoTLsv8tQe7KVLxe'
   stub_get("/deferred/#{dmid}")
     .with(headers: { Authorization: api_key })
-    .to_return(json_response 'deferred_response.json')
+    .to_return(json_response('deferred_response.json'))
 end
 
 Before('@stub_deferred_response_invalid') do
@@ -27,7 +27,7 @@ Before('@stub_deferred_response_invalid') do
   api_key = 'iT2dAoTLsv8tQe7KVLxe'
   stub_get("/deferred/#{dmid}")
     .with(headers: { Authorization: api_key })
-    .to_return(json_response 'deferred_response_invalid.json')
+    .to_return(json_response('deferred_response_invalid.json'))
 end
 
 Before('@stub_deferred_response_progress') do
@@ -35,7 +35,7 @@ Before('@stub_deferred_response_progress') do
   api_key = 'iT2dAoTLsv8tQe7KVLxe'
   stub_get("/deferred/#{dmid}")
     .with(headers: { Authorization: api_key })
-    .to_return(json_response 'deferred_response_progress.json')
+    .to_return(json_response('deferred_response_progress.json'))
 end
 
 Before('@stub_finalize_solution') do
@@ -44,7 +44,7 @@ Before('@stub_finalize_solution') do
   api_key = 'iT2dAoTLsv8tQe7KVLxe'
   stub_post("/code-challenges/projects/#{project_id}/solutions/#{solution_id}/finalize")
     .with(headers: { Authorization: api_key })
-    .to_return(json_response 'finalize_solution.json')
+    .to_return(json_response('finalize_solution.json'))
 end
 
 Before('@stub_train_next_kata_peek') do
@@ -54,7 +54,7 @@ Before('@stub_train_next_kata_peek') do
     .with(
       body: { peek: 'true', strategy: 'default' },
       headers: { Authorization: api_key }
-    ).to_return(json_response 'train_next_kata_peek.json')
+    ).to_return(json_response('train_next_kata_peek.json'))
 end
 
 Before('@stub_train_next_kata_peek_unauthorized') do
@@ -63,7 +63,7 @@ Before('@stub_train_next_kata_peek_unauthorized') do
     .with(
       body: { peek: 'true', strategy: 'default' },
       headers: { Authorization: 'wrong_key' }
-    ).to_return(json_response 'unauthorized.json')
+    ).to_return(json_response('unauthorized.json'))
 end
 
 Before('@stub_train_specific_kata') do
@@ -72,7 +72,7 @@ Before('@stub_train_specific_kata') do
   api_key = 'iT2dAoTLsv8tQe7KVLxe'
   stub_post("/code-challenges/#{id_or_slug}/#{language}/train")
     .with(headers: { Authorization: api_key })
-    .to_return(json_response 'train_specific_kata.json')
+    .to_return(json_response('train_specific_kata.json'))
 end
 
 Before('@stub_train_specific_kata_ruby') do
@@ -81,7 +81,7 @@ Before('@stub_train_specific_kata_ruby') do
   api_key = 'iT2dAoTLsv8tQe7KVLxe'
   stub_post("/code-challenges/#{id_or_slug}/#{language}/train")
     .with(headers: { Authorization: api_key })
-    .to_return(json_response 'train_specific_kata.json')
+    .to_return(json_response('train_specific_kata.json'))
 end
 
 def stub_get(url)

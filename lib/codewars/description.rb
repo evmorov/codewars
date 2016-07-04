@@ -1,13 +1,13 @@
 module Codewars
   class Description < Thor
-    DESCRIPTION_FILE_NAME = 'description.md'
+    DESCRIPTION_FILE_NAME = 'description.md'.freeze
 
     no_commands do
       def take_value_from_file(regex_with_group, param_key)
         @data ||= read_file(DESCRIPTION_FILE_NAME)
         param = @data.match(regex_with_group)
         unless param
-          fail Thor::Error, "'#{param_key}' has not been found in the 'description.md' file."
+          raise Thor::Error, "'#{param_key}' has not been found in the 'description.md' file."
         end
         param[1]
       end
@@ -29,7 +29,7 @@ module Codewars
     def read_file(file_name)
       desc_path = File.expand_path(file_name)
       unless File.exist? desc_path
-        fail Thor::Error, "The file '#{file_name}' has not been found in the current directory."
+        raise Thor::Error, "The file '#{file_name}' has not been found in the current directory."
       end
       File.read(desc_path)
     end

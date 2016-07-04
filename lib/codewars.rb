@@ -1,4 +1,4 @@
-CODEWARS_URL = 'http://www.codewars.com'
+CODEWARS_URL = 'http://www.codewars.com'.freeze
 
 require 'codewars_api'
 require 'thor'

@@ -2,7 +2,7 @@ require 'yaml'
 
 module Codewars
   class Configuration
-    CONFIG_NAME = '.codewarsrc'
+    CONFIG_NAME = '.codewarsrc'.freeze
 
     def self.write_option_to_config(option, value)
       config_hash = config

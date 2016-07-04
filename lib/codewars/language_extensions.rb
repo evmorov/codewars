@@ -8,7 +8,7 @@ module Codewars
       'haskell' => 'hs',
       'csharp' => 'cs',
       'closure' => 'clj'
-    }
+    }.freeze
 
     def self.get(language)
       extension = MAPPING[language]
