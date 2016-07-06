@@ -3,17 +3,12 @@ require 'fileutils'
 
 module Codewars
   class TrainSpecific < Thor
-    def initialize(id_or_slug)
-      message = []
-      api_key = Configuration.option('api_key')
-      message.push 'You should set an api-key to use this command' unless api_key
+    def initialize(client, id_or_slug)
       languages = Configuration.option('language')
-      message.push 'You should set an default language to use this command' unless languages
-      raise Thor::Error, message.join("\n") unless message.empty?
+      raise Thor::Error, 'You should set an default language to use this command' unless languages
 
       say "Starting the '#{id_or_slug}' kata."
 
-      client = CodewarsApi::Client.new(api_key: api_key)
       languages.split(',').each do |language|
         kata = client.train_specific_kata(language: language, id_or_slug: id_or_slug) rescue next
         handle_specific_kata(kata, language)

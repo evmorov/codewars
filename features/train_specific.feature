@@ -19,7 +19,7 @@ Feature: Command 'train' with an argument
       './anything-to-integer/java/solution.java' has been created.
       """
 
-  @stub_train_specific_kata @stub_train_specific_kata_ruby
+  @stub_train_specific_kata
   Scenario: Passing a slug to 'train' prints a correct message when there are several languages in the config
     Given the config file with:
       """

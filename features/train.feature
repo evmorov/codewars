@@ -3,15 +3,6 @@ Feature: Command 'train' without an argument
   Background:
     Given a mocked home directory
 
-  Scenario: Does not work if a key and default langauge are not set
-    Given the config file does not exist
-    When I run `codewars train`
-    Then the output should contain exactly:
-      """
-      You should set an api-key to use this command
-      You should set an default language to use this command
-      """
-
   Scenario: Does not work if a key is not set
     Given the config file with:
       """

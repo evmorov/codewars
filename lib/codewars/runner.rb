@@ -1,7 +1,5 @@
 require 'codewars'
 
-# to use Webmock we need the Runner class
-# https://github.com/cucumber/aruba#testing-ruby-cli-programs-without-spawning-a-new-ruby-process
 module Codewars
   class Runner
     def initialize(argv, stdin = STDIN, stdout = STDOUT, stderr = STDERR, kernel = Kernel)

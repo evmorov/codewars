@@ -1,15 +1,11 @@
 module Codewars
   class Finalize < Thor
-    def initialize
-      api_key = Configuration.option('api_key')
-      raise Thor::Error, 'You should set an api-key to use this command' unless api_key
-
+    def initialize(client)
       desc = Description.new
       slug = desc.take_value_from_file(/Slug: (.+)/, 'Slug')
       project_id = desc.take_value_from_file(/Project ID: (.+)/, 'Project ID')
       solution_id = desc.take_value_from_file(/Solution ID: (.+)/, 'Solution ID')
 
-      client = CodewarsApi::Client.new(api_key: api_key)
       result = client.finalize_solution(
         project_id: project_id,
         solution_id: solution_id

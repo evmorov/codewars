@@ -1,6 +1,6 @@
 module Codewars
   class Attempt < Thor
-    def initialize
+    def initialize(client)
       api_key = Configuration.option('api_key')
       raise Thor::Error, 'You should set an api-key to use this command' unless api_key
 
@@ -9,7 +9,6 @@ module Codewars
       solution_id = desc.take_value_from_file(/Solution ID: (.+)/, 'Solution ID')
       solution = read_solution_file
 
-      client = CodewarsApi::Client.new(api_key: api_key)
       attempt = client.attempt_solution(
         project_id: project_id,
         solution_id: solution_id,
