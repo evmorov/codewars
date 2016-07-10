@@ -20,22 +20,6 @@ Feature: Command 'train' with an argument
       """
 
   @stub_train_specific_kata
-  Scenario: Passing a slug to 'train' prints a correct message when there are several languages in the config
-    Given the config file with:
-      """
-      api_key: iT2dAoTLsv8tQe7KVLxe
-      language: java,ruby
-      """
-    When I run `codewars train anything-to-integer`
-    Then the output should match:
-      """
-      Starting the 'anything-to-integer' kata.
-      './anything-to-integer/\w+/description.md' has been created.
-      './anything-to-integer/\w+/test.\w+' has been created.
-      './anything-to-integer/\w+/solution.\w+' has been created.
-      """
-
-  @stub_train_specific_kata
   Scenario: Train with a slug creates necessary files
     Given the config file with:
       """

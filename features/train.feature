@@ -64,15 +64,3 @@ Feature: Command 'train' without an argument
       Type to start this kata: codewars train anything-to-integer
       """
 
-  @stub_train_next_kata_peek
-  Scenario: Train command uses the first language when there are several languages in the config file
-    Given the config file with:
-      """
-      api_key: iT2dAoTLsv8tQe7KVLxe
-      language: java,ruby
-      """
-    When I run `codewars train`
-    Then the output should contain:
-      """
-      Description: Your task is to program a function which converts
-      """

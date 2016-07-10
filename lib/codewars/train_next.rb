@@ -5,7 +5,7 @@ module Codewars
       raise Thor::Error, 'You should set an default language to use this command' unless language
 
       kata = client.train_next_kata(
-        language: language.split(',').first,
+        language: language,
         peek: 'true',
         strategy: 'default'
       )

@@ -7,7 +7,6 @@ module Codewars
       language = Configuration.option('language')
       raise Thor::Error, 'You should set an default language to use this command' unless language
 
-      language = language.split(',').sample # pick a random language
       say "Starting the '#{id_or_slug}' kata."
 
       kata = client.train_specific_kata(language: language, id_or_slug: id_or_slug)
