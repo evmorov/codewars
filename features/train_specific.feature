@@ -27,15 +27,12 @@ Feature: Command 'train' with an argument
       language: java,ruby
       """
     When I run `codewars train anything-to-integer`
-    Then the output should contain:
+    Then the output should match:
       """
       Starting the 'anything-to-integer' kata.
-      './anything-to-integer/java/description.md' has been created.
-      './anything-to-integer/java/test.java' has been created.
-      './anything-to-integer/java/solution.java' has been created.
-      './anything-to-integer/ruby/description.md' has been created.
-      './anything-to-integer/ruby/test.rb' has been created.
-      './anything-to-integer/ruby/solution.rb' has been created.
+      './anything-to-integer/\w+/description.md' has been created.
+      './anything-to-integer/\w+/test.\w+' has been created.
+      './anything-to-integer/\w+/solution.\w+' has been created.
       """
 
   @stub_train_specific_kata

@@ -4,15 +4,14 @@ require 'fileutils'
 module Codewars
   class TrainSpecific < Thor
     def initialize(client, id_or_slug)
-      languages = Configuration.option('language')
-      raise Thor::Error, 'You should set an default language to use this command' unless languages
+      language = Configuration.option('language')
+      raise Thor::Error, 'You should set an default language to use this command' unless language
 
+      language = language.split(',').sample # pick a random language
       say "Starting the '#{id_or_slug}' kata."
 
-      languages.split(',').each do |language|
-        kata = client.train_specific_kata(language: language, id_or_slug: id_or_slug) rescue next
-        handle_specific_kata(kata, language)
-      end
+      kata = client.train_specific_kata(language: language, id_or_slug: id_or_slug)
+      handle_specific_kata(kata, language)
     end
 
     private
